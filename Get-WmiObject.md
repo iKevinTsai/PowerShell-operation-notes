@@ -8,3 +8,8 @@ Get-WmiObject -Class Win32_ComputerSystem | Select-Object Name, Manufacturer, Mo
 #您也可以使用 Where-Object 指令來篩選 WMI 物件：顯示具有 4 個或更多核心的處理器
 Get-WmiObject -Class Win32_Processor | Where-Object { $_.NumberOfCores -ge 4 }
 ```
+Win32_LogicalDisk 是 WMI 中的一個類別，它代表系統中的邏輯磁碟。
+```Bash
+#使用 Get-WmiObject 取得系統中邏輯磁碟資訊
+Get-WmiObject -Class Win32_LogicalDisk | Select-Object DeviceID, VolumeName, FileSystem, Size, FreeSpace
+```
