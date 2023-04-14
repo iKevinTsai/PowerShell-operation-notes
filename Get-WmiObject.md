@@ -12,4 +12,6 @@ Win32_LogicalDisk 是 WMI 中的一個類別，它代表系統中的邏輯磁碟
 ```Bash
 #使用 Get-WmiObject 取得系統中邏輯磁碟資訊
 Get-WmiObject -Class Win32_LogicalDisk | Select-Object DeviceID, VolumeName, FileSystem, Size, FreeSpace
+#固定磁碟的 DriveType 為 3，可移動磁碟為 2，光碟機為 5，網路磁碟為 4，RAM 磁碟為 6
+Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType = 3" 
 ```
